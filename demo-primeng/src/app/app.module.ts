@@ -11,10 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TableModule} from 'primeng/table';
+import {PanelModule} from 'primeng/panel';
 import { AppConfigService } from './services/app-config.service';
 import { EmployeeService } from './services/employee.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.loadAppConfig();
@@ -31,12 +33,14 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
     AppRoutingModule,
     MenubarModule,
     TableModule,
+    PanelModule,
     HttpClientModule
 	],
 	declarations: [
 		AppComponent,
     HomeComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeDetailsComponent
 	],
   providers: [
     EmployeeService,
