@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "ag-grid-angular": "^27.0.0",
+    "ag-grid-community": "^27.0.1",
     "primeicons": "^5.0.0",
     "primeng": "^12.2.3",
     "rxjs": "~6.6.0",

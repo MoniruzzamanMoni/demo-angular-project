@@ -15,7 +15,8 @@ export class AppComponent {
   ngOnInit() {
       this.items = [
             {label: 'Home', icon: 'pi pi-home', routerLink: ['/home']},
-            {label: 'Employee List', icon: 'pi pi-list', routerLink: ['/employee-list']}
+            {label: 'Employee List (PrimeNG)', icon: 'pi pi-list', routerLink: ['/employee-list']},
+            {label: 'Product List (AgGrid)', icon: 'pi pi-list', routerLink: ['/product-list']},
         ];
   }
   

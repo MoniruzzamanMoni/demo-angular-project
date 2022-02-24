@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { ProductComponent } from './product/product.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'employee-list', component: EmployeeComponent },
   { path: 'employee-details', component: EmployeeDetailsComponent },
+  { path: 'product-list', component: ProductComponent },
   { path: '', component: HomeComponent }
 ]
 

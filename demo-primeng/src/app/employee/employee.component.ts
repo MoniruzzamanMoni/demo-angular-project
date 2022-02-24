@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from './employee';
+import { ColDef } from 'ag-grid-community';
 
 @Component({
   selector: 'app-item-list',
@@ -19,6 +20,7 @@ export class EmployeeComponent implements OnInit {
       .subscribe(
         (response) => this.employees = response 
       );
+
   }
 
   goDetails(data: Employee) {

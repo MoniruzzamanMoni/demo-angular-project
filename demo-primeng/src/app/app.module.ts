@@ -14,9 +14,12 @@ import {TableModule} from 'primeng/table';
 import {PanelModule} from 'primeng/panel';
 import { AppConfigService } from './services/app-config.service';
 import { EmployeeService } from './services/employee.service';
+import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { ProductComponent } from './product/product.component';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.loadAppConfig();
@@ -34,16 +37,19 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
     MenubarModule,
     TableModule,
     PanelModule,
+    AgGridModule,
     HttpClientModule
 	],
 	declarations: [
 		AppComponent,
     HomeComponent,
     EmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    ProductComponent
 	],
   providers: [
     EmployeeService,
+    ProductService,
     {
       provide: APP_INITIALIZER,
       useFactory: appConfigFactory,
