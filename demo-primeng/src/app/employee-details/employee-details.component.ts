@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Data} from '@angular/router';
 import { Employee } from '../employee/employee';
 import { StateService } from '../services/state.service';
 
@@ -19,6 +19,14 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor(private route:ActivatedRoute, private stateService: StateService) { }
 
   ngOnInit(): void {
+
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.employee = data['data'];
+      }
+    );
+
+
     // receive by queryParams (should avoid for this case)
     this.route.queryParams.subscribe(
       params => {

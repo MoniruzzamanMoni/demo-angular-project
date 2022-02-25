@@ -21,6 +21,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ProductComponent } from './product/product.component';
 import { StateService } from './services/state.service';
+import { EmployeeDetailsResolveGuardService } from './services/employee-details-resolve-guard.service';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.loadAppConfig();
@@ -52,6 +53,7 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
     EmployeeService,
     ProductService,
     StateService,
+    EmployeeDetailsResolveGuardService,
     {
       provide: APP_INITIALIZER,
       useFactory: appConfigFactory,

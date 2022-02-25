@@ -44,5 +44,10 @@ export class EmployeeComponent implements OnInit {
     this.stateService.setData(data);
     this.router.navigate(['/employees/employee/'+data.id]);
   }
+  
+
+  goDetailsByResolveGuard(data: Employee) {
+    this.router.navigate(['/employees/employee/'+data.id]);
+  }
 
 }
