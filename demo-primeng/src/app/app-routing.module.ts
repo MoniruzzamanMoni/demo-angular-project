@@ -8,10 +8,12 @@ import { ProductComponent } from './product/product.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'employee-list', component: EmployeeComponent },
+  { path: 'employees', component: EmployeeComponent },
   { path: 'employee-details', component: EmployeeDetailsComponent },
-  { path: 'product-list', component: ProductComponent },
-  { path: '', component: HomeComponent }
+  { path: 'employees/employee/:id', component: EmployeeDetailsComponent },
+  { path: 'products', component: ProductComponent },
+  { path: '', component: HomeComponent },
+  { path: '*', redirectTo: '' }
 ]
 
 @NgModule({

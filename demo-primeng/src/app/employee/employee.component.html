@@ -1,6 +1,7 @@
 <p-table [value]="employees">
     <ng-template pTemplate="header">
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Options</th>
@@ -8,10 +9,12 @@
     </ng-template>
     <ng-template pTemplate="body" let-emp>
         <tr>
+            <td>{{emp.id}}</td>
             <td>{{emp.name}}</td>
             <td>{{emp.email}}</td>
             <td>
                 <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetails(emp)">Details</button>
+                <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetailsByState(emp)">Details (by state)</button>
             </td>
         </tr>
     </ng-template>

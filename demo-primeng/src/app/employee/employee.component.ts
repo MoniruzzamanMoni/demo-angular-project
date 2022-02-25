@@ -29,4 +29,10 @@ export class EmployeeComponent implements OnInit {
         { queryParams: { details: JSON.stringify(data) }});
   }
 
+  goDetailsByState(data: Employee) {
+    console.log(data);
+    this.router.navigate(['/employees/employee/'+data.id], 
+        { state: { details: data }});
+  }
+
 }
