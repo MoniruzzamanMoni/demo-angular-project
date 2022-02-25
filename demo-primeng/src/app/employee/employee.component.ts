@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from './employee';
 import { ColDef } from 'ag-grid-community';
+import { StateService } from '../services/state.service';
 
 @Component({
   selector: 'app-item-list',
@@ -13,7 +14,11 @@ export class EmployeeComponent implements OnInit {
 
   employees: Employee[] = [];
 
-  constructor(private employeeService: EmployeeService, private router: Router) { }
+  constructor(
+    private employeeService: EmployeeService, 
+    private stateService: StateService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
       this.employeeService.getEmployees()
@@ -33,6 +38,11 @@ export class EmployeeComponent implements OnInit {
     console.log(data);
     this.router.navigate(['/employees/employee/'+data.id], 
         { state: { details: data }});
+  }
+
+  goDetailsByStateService(data: Employee) {
+    this.stateService.setData(data);
+    this.router.navigate(['/employees/employee/'+data.id]);
   }
 
 }

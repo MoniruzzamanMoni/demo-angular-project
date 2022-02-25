@@ -20,6 +20,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ProductComponent } from './product/product.component';
+import { StateService } from './services/state.service';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.loadAppConfig();
@@ -50,6 +51,7 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
   providers: [
     EmployeeService,
     ProductService,
+    StateService,
     {
       provide: APP_INITIALIZER,
       useFactory: appConfigFactory,

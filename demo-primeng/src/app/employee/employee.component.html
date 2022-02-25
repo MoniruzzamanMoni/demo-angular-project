@@ -14,7 +14,8 @@
             <td>{{emp.email}}</td>
             <td>
                 <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetails(emp)">Details</button>
-                <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetailsByState(emp)">Details (by state)</button>
+                <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetailsByState(emp)">Navigate state</button>
+                <button pButton type="button" class="p-button-raised p-button-rounded" (click)="goDetailsByStateService(emp)">By StateService</button>
             </td>
         </tr>
     </ng-template>

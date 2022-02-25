@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Employee } from '../employee/employee';
+import { StateService } from '../services/state.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -15,7 +16,7 @@ export class EmployeeDetailsComponent implements OnInit {
     email: ''
   };
   
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private stateService: StateService) { }
 
   ngOnInit(): void {
     // receive by queryParams (should avoid for this case)
@@ -39,7 +40,14 @@ export class EmployeeDetailsComponent implements OnInit {
       console.log('Got details: ', this.employee);
     }
 
+    // receive by custom StateService
 
+    if(this.employee.id == -1) {
+      this.employee = this.stateService.getData();
+      console.log('Got state data by  state service: ', this.employee);
+    }
+
+    
   }
 
 }
