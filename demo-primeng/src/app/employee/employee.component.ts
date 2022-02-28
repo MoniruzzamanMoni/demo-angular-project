@@ -13,7 +13,7 @@ import { StateService } from '../services/state.service';
 export class EmployeeComponent implements OnInit {
 
   employees: Employee[] = [];
-
+  selectedEmployees: string[] = [];
   constructor(
     private employeeService: EmployeeService, 
     private stateService: StateService, 

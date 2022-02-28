@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TableModule} from 'primeng/table';
 import {PanelModule} from 'primeng/panel';
+import {MultiSelectModule} from 'primeng/multiselect';
 import { AppConfigService } from './services/app-config.service';
 import { EmployeeService } from './services/employee.service';
 import { ProductService } from './services/product.service';
@@ -40,6 +41,7 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
     TableModule,
     PanelModule,
     AgGridModule,
+		MultiSelectModule,
     HttpClientModule
 	],
 	declarations: [
